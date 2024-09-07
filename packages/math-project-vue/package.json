@@ -9,12 +9,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@HLY-H/tools": "workspace:^",
     "vue": "^3.4.37"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.1.2",
-    "typescript": "^5.5.3",
-    "vite": "^5.4.1",
+    "typescript": "^5.5.4",
+    "vite": "^5.4.3",
     "vue-tsc": "^2.0.29"
   }
 }

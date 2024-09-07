@@ -1,9 +1,16 @@
 <script setup lang="ts">
+import dayjs from 'dayjs';
 import HelloWorld from './components/HelloWorld.vue'
+import { Person } from '@HLY-H/tools'
+
+const p = new Person("Junmping", "math");
+
 </script>
 
 <template>
   <div>
+    <div>当前时间{{ dayjs().format('YYYY年MM月DD日 HH:mm:ss') }}</div>
+    <div>{{ p.name }} : {{ p.slogan }}</div>
     <a href="https://vitejs.dev" target="_blank">
       <img src="/vite.svg" class="logo" alt="Vite logo" />
     </a>
