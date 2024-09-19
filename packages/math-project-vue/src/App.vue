@@ -2,6 +2,7 @@
 import dayjs from 'dayjs';
 import HelloWorld from './components/HelloWorld.vue'
 import { Person } from '@HLY-H/tools'
+import ZhiHuHot from './components/ZhiHuHot.vue'
 
 const p = new Person("Junmping", "math");
 
@@ -19,6 +20,7 @@ const p = new Person("Junmping", "math");
     </a>
   </div>
   <HelloWorld msg="Vite + Vue" />
+  <ZhiHuHot />
 </template>
 
 <style scoped>
