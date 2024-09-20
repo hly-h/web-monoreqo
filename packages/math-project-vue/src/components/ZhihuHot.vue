@@ -24,7 +24,42 @@ const a = ref('⭐知乎⭐')
 const arr = ref()
 </script>
 
+
 <template>
+  <div class="mx-auto p-5">
+    <!-- 知乎整个框架页面 -->
+    <div class="mb-3 text-center text-13 text-gray-700">
+      <!-- 知乎 -->
+      {{ a }}
+    </div>
+    <div class="mb-7.5 flex flex-wrap gap-2.5">
+      <div v-for="(item, index) in arr" :key="index" class="border rounded bg-gray-50 p-3.75 text-gray-400 md:border">
+        {{ index }} - {{ item }}
+      </div>
+    </div>
+    <div class="flex flex-wrap justify-center gap-5">
+      <!-- 知乎中每一个内容的背景、边框样式 -->
+      <section v-for="(item, index) in list" :key="item.id" class="w-72 flex flex-col border border-gray-400 rounded-md bg-yellow-100 p-3.75 shadow-sm hover:bg-yellow-200" @click="toggleHot(item.target.id)">
+        <span>{{ index + 1 }}</span>
+        <div class="flex-1">
+          <h1 class="mb-1.25 truncate text-4xl text-blue-500">
+            {{ item.target.title }}
+          </h1>
+          <p class="mb-2.5 truncate text-sm text-gray-500">
+            {{ item.target.excerpt }}
+          </p>
+          <div class="text-sm text-gray-700">
+            {{ item.detail_text }}
+          </div>
+        </div>
+        <img :src="item.children[0].thumbnail" :alt="item.target.title" class="mt-2.5 h-60 w-full rounded-sm object-cover">
+      </section>
+    </div>
+  </div>
+</template>
+
+
+<!-- <template>
   <div class="main-content">
     <div class="a-content">
       {{ a }}
@@ -52,9 +87,9 @@ const arr = ref()
       </section>
     </div>
   </div>
-</template>
+</template> -->
 
-<style scoped>
+<!-- <style scoped>
 .main-content {
     padding: 20px;
     margin: 0 auto;
@@ -132,4 +167,4 @@ const arr = ref()
     border-radius: 5px;
     margin-top: 10px;
 }
-</style>
+</style> -->

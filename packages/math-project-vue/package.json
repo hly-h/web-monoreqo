@@ -18,5 +18,12 @@
     "unocss": "^0.62.4",
     "vite": "^5.4.6",
     "vue-tsc": "^2.0.29"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "npx lint-staged"
+  },
+  "lint-staged": {
+    "*": "eslint --fix"
   }
 }
+

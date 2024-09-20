@@ -16,47 +16,61 @@ const p = new Person('Junmping', 'math')
 </script>
 
 <template>
-  <div class="dark:bg-red">
+  <div class="p-2 dark:bg-purple-200 md:bg-pink-100 sm:bg-blue-3">
+    <div
+      class="-4 m-auto size-100 bg-pink hover:(bg-cyan text-4xl) md:bg-pink sm:bg-blue-3"
+      flex
+      content-center
+      items-center
+      justify-center
+      transition-1000
+    >
+      <button btn>
+        OnClick
+      </button>
+      <div class="i-carbon-logo-github" />
+    </div>
     <div class="flex justify-center gap-5">
-      <button @click="disableDarkMode">
+      <button class="rounded-md bg-white px-4 py-2 dark:bg-slate-200" @click="disableDarkMode">
         Light
       </button>
-      <button @click="enableDarkMode">
+      <button class="rounded-md bg-white px-4 py-2 dark:bg-slate-200" @click="enableDarkMode">
         Dark
       </button>
     </div>
-  </div>
-  <div class="bg-#a992d5 dark:bg-pink" />
-  <section
-    class="grid grid-cols-3 w-800px items-center gap-2 rounded-md bg-yellow"
-  >
-    <div class="h-10 place-content-center bg-pink">
-      1
+    <section
+      class="grid grid-cols-3 gap-2 rounded-md bg-yellow-100 dark:bg-yellow-200"
+    >
+      <div class="h-10 flex items-center justify-center bg-pink-300 dark:bg-pink-400">
+        1
+      </div>
+      <div class="bg-sky-300 dark:bg-sky-400">
+        2
+      </div>
+      <div class="bg-blue-300 dark:bg-blue-400">
+        3
+      </div>
+      <div class="bg-green-300 dark:bg-green-400">
+        4
+      </div>
+    </section>
+    <div class="bg-purple-300 dark:bg-purple-400 md:bg-amber-400 sm:bg-blue-300" />
+    <div>
+      <div class="my-4">
+        当前时间{{ dayjs().format('YYYY年MM月DD日 HH:mm:ss') }}
+      </div>
+      <div>{{ p.name }} : {{ p.slogan }}</div>
+      <a href="https://vitejs.dev" target="_blank" class="my-4">
+        <img src="/vite.svg" class="logo" alt="Vite logo">
+      </a>
+      <a href="https://vuejs.org/" target="_blank" class="my-4">
+        <img src="./assets/vue.svg" class="logo vue" alt="Vue logo">
+      </a>
     </div>
-    <div bg-sky>
-      2
-    </div>
-    <div>3</div>
-    <div>4</div>
-  </section>
-  <button btn>
-    <div i-carbon-logo-github text-xl hover:bg-red />
-  </button>
-  <div class="bg-#a992d5 md:bg-amber-4 sm:bg-blue-3" />
-  <div>
-    <div>当前时间{{ dayjs().format('YYYY年MM月DD日 HH:mm:ss') }}</div>
-    <div>{{ p.name }} : {{ p.slogan }}</div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo">
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo">
-    </a>
+    <HelloWorld msg="Vite + Vue" class="my-4" />
+    <ZhiHuHot class="my-4" />
   </div>
-  <HelloWorld msg="Vite + Vue" />
-  <ZhiHuHot />
 </template>
-
 
 <style scoped>
 .logo {

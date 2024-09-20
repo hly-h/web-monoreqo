@@ -9,7 +9,7 @@ const count = ref(0)
 <template>
   <h1>{{ msg }}</h1>
 
-  <div class="card">
+  <!-- <div class="card">
     <button type="button" @click="count++">
       count is {{ count }}
     </button>
@@ -17,9 +17,9 @@ const count = ref(0)
       Edit
       <code>components/HelloWorld.vue</code> to test HMR
     </p>
-  </div>
+  </div> -->
 
-  <p>
+  <!-- <p>
     Check out
     <a
       href="https://vuejs.org/guide/quick-start.html#local"
@@ -36,10 +36,11 @@ const count = ref(0)
   <p class="read-the-docs">
     Click on the Vite and Vue logos to learn more
   </p>
-</template>
+</template> -->
 
-<style scoped>
-.read-the-docs {
-  color: #888;
-}
-</style>
+  <!-- <style scoped>
+    .read-the-docs {
+    color: #888;
+    }
+  </style> -->
+</template>
