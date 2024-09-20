@@ -1,53 +1,59 @@
 <script lang="ts" setup>
-import {onMounted,ref} from 'vue';
-import{ZhiHuHot,ZhiHuHotList} from '../types/zhihu';
+import type { ZhiHuHot, ZhiHuHotList } from '../types/zhihu'
+import { onMounted, ref } from 'vue'
 
 
-const list = ref<ZhiHuHot[]>([]);
+const list = ref<ZhiHuHot[]>([])
 
 const getData = async () => {
-const url = "/api/v3/feed/topstory/hot-lists/total";
-let response = await fetch(url, { mode: "no-cors" });
-  const res: ZhiHuHotList = await response.json();
-  list.value = res.data;
-};
+  const url = '/api/v3/feed/topstory/hot-lists/total'
+  const response = await fetch(url, { mode: 'no-cors' })
+  const res: ZhiHuHotList = await response.json()
+  list.value = res.data
+}
 
 onMounted(() => {
-  getData();
-});
+  getData()
+})
 
 const toggleHot = (id: number) => {
-  window.open(`https://www.zhihu.com/question/${id}`);
-};
+  window.open(`https://www.zhihu.com/question/${id}`)
+}
 
-const a=ref('⭐知乎⭐')
-const arr=ref()
+const a = ref('⭐知乎⭐')
+const arr = ref()
 </script>
+
 <template>
   <div class="main-content">
-      <div class="a-content">{{a}}</div>
-      <div class="arr-content">
-          <div v-for = "(item, index) in arr" :key = "index" class = "arr-item">{{ index }} - {{item}}</div>
+    <div class="a-content">
+      {{ a }}
+    </div>
+    <div class="arr-content">
+      <div v-for="(item, index) in arr" :key="index" class="arr-item">
+        {{ index }} - {{ item }}
       </div>
-      <div class="list">
-          <section v-for = "(item, index) in list" :key = "item.id" class = "hot" @click = "toggleHot(item.target.id)">
-              <span>{{ index + 1 }}</span>
-              <div class="hot-content">
-                  <h1 class="ellipsis_2">
-                      {{ item.target.title }}
-                  </h1>
-                  <p class="ellipsis_1">
-                      {{ item.target.excerpt }}
-                  </p>
-                  <div style="text-align: start;" class="detail-text">
-                      {{ item.detail_text }}
-                  </div>
-              </div>
-              <img :src = "item.children[0].thumbnail" alt = "" class="hot-image">
-          </section>
-      </div>
+    </div>
+    <div class="list">
+      <section v-for="(item, index) in list" :key="item.id" class="hot" @click="toggleHot(item.target.id)">
+        <span>{{ index + 1 }}</span>
+        <div class="hot-content">
+          <h1 class="ellipsis_2">
+            {{ item.target.title }}
+          </h1>
+          <p class="ellipsis_1">
+            {{ item.target.excerpt }}
+          </p>
+          <div style="text-align: start;" class="detail-text">
+            {{ item.detail_text }}
+          </div>
+        </div>
+        <img :src="item.children[0].thumbnail" alt="" class="hot-image">
+      </section>
+    </div>
   </div>
 </template>
+
 <style scoped>
 .main-content {
     padding: 20px;

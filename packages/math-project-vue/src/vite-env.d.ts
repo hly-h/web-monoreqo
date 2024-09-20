@@ -1,2 +1,2 @@
 /// <reference types="vite/client" />
-declare module "@HLY-H/tools";
+declare module '@HLY-H/tools';

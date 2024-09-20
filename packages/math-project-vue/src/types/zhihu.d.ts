@@ -55,31 +55,31 @@ export interface Author {
   avatar_url: string
 }
 
-  
-  export interface Children {
-    type: string
-    thumbnail: string
-  }
-  
-  export interface Paging {
-    is_end: boolean
-    is_start: boolean
-    next: string
-    previous: string
-    totals: number
-  }
-  
-  export interface HeadZone {
-    type: string
-    data: Daum2[]
-  }
-  
-  export interface Daum2 {
-    id: string
-    link_url: string
-    title: string
-    source_type: number
-    attached_info: string
-    tag: string
-    tag_bg_color: string
-  }
+
+export interface Children {
+  type: string
+  thumbnail: string
+}
+
+export interface Paging {
+  is_end: boolean
+  is_start: boolean
+  next: string
+  previous: string
+  totals: number
+}
+
+export interface HeadZone {
+  type: string
+  data: Daum2[]
+}
+
+export interface Daum2 {
+  id: string
+  link_url: string
+  title: string
+  source_type: number
+  attached_info: string
+  tag: string
+  tag_bg_color: string
+}
