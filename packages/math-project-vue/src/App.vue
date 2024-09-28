@@ -2,9 +2,12 @@
 import { Person } from '@HLY-H/tools'
 import dayjs from 'dayjs'
 import { onMounted } from 'vue'
+import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
-import ZhiHuHot from './components/ZhiHuHot.vue'
+// import ZhiHuHot from './components/ZhiHuHot.vue'
 import { useDark } from './composables/useDarks'
+// import i18n from './pages/i18n.vue'
+// import MockView from './pages/MockView.vue'
 
 const { enableDarkMode, disableDarkMode, applySavedTheme } = useDark()
 
@@ -16,6 +19,9 @@ const p = new Person('Junmping', 'math')
 </script>
 
 <template>
+  <!-- <div>  <MockView /></div>
+  <div> <i18n /></div> -->
+
   <div class="p-2 dark:bg-purple-200 md:bg-pink-100 sm:bg-blue-3">
     <div
       class="-4 m-auto size-100 bg-pink hover:(bg-cyan text-4xl) md:bg-pink sm:bg-blue-3"
@@ -30,14 +36,42 @@ const p = new Person('Junmping', 'math')
       </button>
       <div class="i-carbon-logo-github" />
     </div>
-    <div class="flex justify-center gap-5">
+
+    <!-- 路由渲染 -->
+    <div>
+      <main class="j-70vh m-2 overflow-scroll rounded-xl bg-pink-200 p-2 dark:bg-purple-300">
+        <p>
+          <strong>Current route path: </strong> {{ $route.fullPath }}
+        </p>
+        <header flex justify-center gap-4 text-xl>
+          <RouterLink to="/zhihu">
+            知乎热榜
+          </RouterLink>
+          <RouterLink to="/theme">
+            主题切换
+          </RouterLink>
+          <RouterLink to="/mock">
+            以赝顶真
+          </RouterLink>
+          <RouterLink to="/api">
+            Apifox
+          </RouterLink>
+          <RouterLink to="/i18n">
+            i18n
+          </RouterLink>
+        </header>
+        <RouterView />
+      </main>
+    </div>
+
+    <!-- <div class="flex justify-center gap-5">
       <button class="rounded-md bg-white px-4 py-2 dark:bg-slate-200" @click="disableDarkMode">
         Light
       </button>
       <button class="rounded-md bg-white px-4 py-2 dark:bg-slate-200" @click="enableDarkMode">
         Dark
       </button>
-    </div>
+    </div> -->
     <section
       class="grid grid-cols-3 gap-2 rounded-md bg-yellow-100 dark:bg-yellow-200"
     >
@@ -89,4 +123,4 @@ const p = new Person('Junmping', 'math')
   background-color: black;
   color: white;
 }
-</style>
+</style>;
