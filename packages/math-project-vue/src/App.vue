@@ -3,11 +3,13 @@ import { Person } from '@HLY-H/tools'
 import dayjs from 'dayjs'
 import { onMounted } from 'vue'
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+// import HelloWorld from './components/HelloWorld.vue'
 // import ZhiHuHot from './components/ZhiHuHot.vue'
 import { useDark } from './composables/useDarks'
 // import i18n from './pages/i18n.vue'
 // import MockView from './pages/MockView.vue'
+
+const p = new Person('Junmping', 'math')
 
 const { enableDarkMode, disableDarkMode, applySavedTheme } = useDark()
 
@@ -15,7 +17,20 @@ onMounted(() => {
   applySavedTheme()
 })
 
-const p = new Person('Junmping', 'math')
+// function openAleart() {
+//   showMsg({
+//     title: '标题',
+//     content: '1234567',
+//     closeable: true,
+//     showCancle: true,
+//     onCancel: () => {
+//       console.log('cancle :>>')
+//     },
+//     onConfirm: () => {
+//       console.log('Confirm :>>')
+//     },
+//   })
+// }
 </script>
 
 <template>
@@ -36,6 +51,10 @@ const p = new Person('Junmping', 'math')
       </button>
       <div class="i-carbon-logo-github" />
     </div>
+
+    <!-- <button @click="openAleart">
+      openAleart
+    </button> -->
 
     <!-- 路由渲染 -->
     <div>
@@ -58,6 +77,9 @@ const p = new Person('Junmping', 'math')
           </RouterLink>
           <RouterLink to="/i18n">
             i18n
+          </RouterLink>
+          <RouterLink to="/messageBox">
+            openAleart
           </RouterLink>
         </header>
         <RouterView />

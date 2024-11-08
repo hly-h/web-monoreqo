@@ -1,29 +1,36 @@
+
 <script lang="ts" setup>
-import { onMounted } from 'vue'
-import { useDark } from '../composables/useDarks'
-
-const { enableDarkMode, disableDarkMode, applySavedTheme } = useDark()
-
-onMounted(() => {
-  applySavedTheme()
-})
+const onThemeChange = (e: string) => {
+  document.body.className = e
+}
 </script>
 
 <template>
-  <div class="flex justify-center gap-5">
-    <button class="rounded-md bg-white px-4 py-2 dark:bg-slate-200" @click="disableDarkMode">
-      Light
+  <header flex items-center justify-center gap-2>
+    <h2>主题切换</h2>
+    <button @click="onThemeChange('default')">
+      default
     </button>
-    <button class="rounded-md bg-white px-4 py-2 dark:bg-slate-200" @click="enableDarkMode">
-      Dark
+    <button @click="onThemeChange('peaple')">
+      peaple
+    </button>
+    <button @click="onThemeChange('spring')">
+      spring
+    </button>
+  </header>
+
+  <div mb-3 flex justify-center gap-2>
+    <button bg-primary text-white>
+      primary
+    </button>
+    <button bg-warning text-white>
+      warning
+    </button>
+    <button bg-danger text-white>
+      danger
+    </button>
+    <button bg-info text-white>
+      info
     </button>
   </div>
 </template>
-
-<style scoped>
-.dark {
-  background-color: black;
-  color: white;
-}
-</style>;
-

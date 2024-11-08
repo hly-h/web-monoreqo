@@ -7,6 +7,9 @@ import UnoCSS from 'unocss/vite'
 
 
 export default defineConfig({
+  test: {
+    environment: 'jsdom',
+  },
   plugins: [vue(), VueI18n({
     runtimeOnly: true,
     compositionOnly: true,
@@ -34,7 +37,7 @@ export default defineConfig({
     },
   })],
   resolve: {
-    alias: { '@': '/src' },
+    alias: { '@': path.resolve(__dirname, './src') },
   },
   server: {
     open: true,

@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import ZhiHuHot from '../components/ZhiHuHot.vue'
 import i18n from './i18n.vue'
+import MessageBox from './messageBox.vue'
 import MockView from './MockView.vue'
 </script>
 
@@ -9,4 +10,5 @@ import MockView from './MockView.vue'
   <MockView />
   <ZhiHuHot />
   <i18n />
+  <MessageBox />
 </template>

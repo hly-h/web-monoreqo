@@ -4,6 +4,7 @@ import Apifox from '../pages/Apifox.vue'
 import ColorTheme from '../pages/ColorTheme.vue'
 // import HomeView from '../pages/HomeView.vue'
 import I18n from '../pages/i18n.vue'
+import messageBox from '../pages/messageBox.vue'
 import MockView from '../pages/MockView.vue'
 
 const routes = [
@@ -13,6 +14,7 @@ const routes = [
   { name: 'zhihu', path: '/zhihu', component: ZhiHuHot },
   { name: 'Apifox', path: '/api', component: Apifox },
   { name: 'i18n', path: '/i18n', component: I18n },
+  { name: 'messageBox', path: '/messageBox', component: messageBox },
 ]
 
 const router = createRouter({
